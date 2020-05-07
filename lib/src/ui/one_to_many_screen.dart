@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sqlite/src/ui/anime_list_screen.dart';
-import 'package:flutter_sqlite/src/ui/one_to_many_screen.dart';
+import 'package:flutter_sqlite/src/ui/customer_list_screen.dart';
 
-class HomeScreen extends StatefulWidget {
+class OneToManyScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _OneToManyScreenState createState() => _OneToManyScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _OneToManyScreenState extends State<OneToManyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Colors.purple,
         title: Text(
-          'Menu',
+          'Example One To Many',
           style: TextStyle(),
         ),
         centerTitle: true,
@@ -28,10 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             child: RaisedButton(
               color: Colors.lightBlue,
-              child: Text('Upcoming Anime', style: TextStyle(color: Colors.white),),
+              child: Text('Customer', style: TextStyle(color: Colors.white),),
               onPressed: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => AnimeListScreen()));
+                    MaterialPageRoute(builder: (context) => CustomerListScreen()));
               },
             ),
           ),
@@ -40,11 +40,11 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 60,
             width: double.infinity,
             child: RaisedButton(
-              color: Colors.purple,
-              child: Text('One to Many', style: TextStyle(color: Colors.white),),
+              color: Colors.lightBlue,
+              child: Text('Order', style: TextStyle(color: Colors.white),),
               onPressed: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => OneToManyScreen()));
+                    MaterialPageRoute(builder: (context) => AnimeListScreen()));
               },
             ),
           )
